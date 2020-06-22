@@ -1,10 +1,18 @@
 <div class="container">
 
-  <button (click)="toggle()">Show / Hide</button>
-  <button (click)="changeCountdownSecond()">Change countDownSecond</button>
+  <app-navbar></app-navbar>
 
-  <app-countdown-timer *ngIf="isShow" [seconds]="countDownSecond"></app-countdown-timer>
-  <app-countdown-timer *ngIf="isShow" [seconds]="3"></app-countdown-timer>
-  <app-countdown-timer *ngIf="isShow" [seconds]="5"></app-countdown-timer>
+  <div class="row">
+    <div class="col-4">
+
+      <app-text-article-list></app-text-article-list>
+
+    </div>
+
+    <div class="col-8">
+      <app-article-list></app-article-list>
+    </div>
+  </div>
+
 
 </div>
