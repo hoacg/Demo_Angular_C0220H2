@@ -9,6 +9,8 @@ export class AppComponent implements OnChanges{
   title = 'angular-c0220h2-demo';
   isShow = true;
 
+  userRating: number;
+
   countDownSecond = 5;
 
   showMessage() {

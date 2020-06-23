@@ -6,6 +6,7 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
 import { TemplateDrivenUserFormComponent } from './template-driven-user-form/template-driven-user-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ModelDrivenUserFormComponent } from './model-driven-user-form/model-driven-user-form.component';
+import {NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ModelDrivenUserFormComponent } from './model-driven-user-form/model-dri
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
