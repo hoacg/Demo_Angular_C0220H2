@@ -1,10 +1,7 @@
 <div class="container">
 
-  <button (click)="toggle()">Show / Hide</button>
-  <button (click)="changeCountdownSecond()">Change countDownSecond</button>
+<!--  <app-template-driven-user-form></app-template-driven-user-form>-->
 
-  <app-countdown-timer *ngIf="isShow" [seconds]="countDownSecond"></app-countdown-timer>
-  <app-countdown-timer *ngIf="isShow" [seconds]="3"></app-countdown-timer>
-  <app-countdown-timer *ngIf="isShow" [seconds]="5"></app-countdown-timer>
+  <app-model-driven-user-form></app-model-driven-user-form>
 
 </div>

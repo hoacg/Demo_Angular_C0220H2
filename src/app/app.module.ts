@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { TemplateDrivenUserFormComponent } from './template-driven-user-form/template-driven-user-form.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ModelDrivenUserFormComponent } from './model-driven-user-form/model-driven-user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    TemplateDrivenUserFormComponent,
+    ModelDrivenUserFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
