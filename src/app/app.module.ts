@@ -5,8 +5,11 @@ import { AppComponent } from './app.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleListComponent } from './article-list/article-list.component';
-import {FormsModule} from '@angular/forms';
 import { TextArticleListComponent } from './text-article-list/text-article-list.component';
+import { TemplateDrivenUserFormComponent } from './template-driven-user-form/template-driven-user-form.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ModelDrivenUserFormComponent } from './model-driven-user-form/model-driven-user-form.component';
+import {NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -14,12 +17,16 @@ import { TextArticleListComponent } from './text-article-list/text-article-list.
     CountdownTimerComponent,
     NavbarComponent,
     ArticleListComponent,
-    TextArticleListComponent
+    TextArticleListComponent,
+    TemplateDrivenUserFormComponent,
+    ModelDrivenUserFormComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbRatingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -6,6 +6,10 @@ import {Subject} from 'rxjs';
 })
 export class SearchService {
 
+  constructor() {
+    console.log('SearchService được tạo trong bộ nhớ!');
+  }
+
   public searchInput = new Subject<string>();
 
 }
