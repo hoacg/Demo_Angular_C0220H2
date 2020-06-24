@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ArticleService} from '../article.service';
+import {SearchService} from '../search.service';
 
 @Component({
   selector: 'app-model-driven-user-form',
@@ -19,7 +20,10 @@ export class ModelDrivenUserFormComponent implements OnInit {
     content: new FormControl()
   });
 
-  constructor(private articleService: ArticleService) { }
+  constructor(
+    private searchService: SearchService,
+    private articleService: ArticleService
+  ) { }
 
   ngOnInit() {
   }
@@ -27,6 +31,7 @@ export class ModelDrivenUserFormComponent implements OnInit {
   saveArticle() {
     console.log(this.articleForm.value);
     this.articleService.fullArticleList.push(this.articleForm.value);
+    this.searchService.searchInput.next('');
   }
 
 }
