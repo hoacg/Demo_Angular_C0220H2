@@ -10,6 +10,8 @@ import { TemplateDrivenUserFormComponent } from './template-driven-user-form/tem
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ModelDrivenUserFormComponent } from './model-driven-user-form/model-driven-user-form.component';
 import {NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule, Routes} from '@angular/router';
+import { routes } from './app-routing';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbRatingModule
+    NgbRatingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

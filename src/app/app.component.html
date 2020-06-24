@@ -1,26 +1,12 @@
 <div class="container">
-
-<!--  <app-template-driven-user-form></app-template-driven-user-form>-->
-
-  <ngb-rating [(rate)]="userRating"></ngb-rating>
-
-  <p>Người dùng chọn: {{ userRating }}</p>
-
-  <app-model-driven-user-form></app-model-driven-user-form>
   <app-navbar></app-navbar>
 
   <div class="row">
     <div class="col-4">
-
       <app-text-article-list></app-text-article-list>
-
     </div>
-
     <div class="col-8">
-      <app-article-list></app-article-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
-
-
-
 </div>
