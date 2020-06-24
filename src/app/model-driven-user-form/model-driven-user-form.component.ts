@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ArticleService} from '../article.service';
 
 @Component({
   selector: 'app-model-driven-user-form',
@@ -8,24 +9,24 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class ModelDrivenUserFormComponent implements OnInit {
 
-  userForm: FormGroup = new FormGroup({
-    email: new FormControl('', [
+  articleForm: FormGroup = new FormGroup({
+    title: new FormControl('', [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(50)
     ]),
-    mySelect: new FormControl(),
-    myMultiSelect: new FormControl(),
-    myText: new FormControl()
+    image: new FormControl(),
+    content: new FormControl()
   });
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
   }
 
-  showInfo() {
-    console.log(this.userForm.value);
+  saveArticle() {
+    console.log(this.articleForm.value);
+    this.articleService.fullArticleList.push(this.articleForm.value);
   }
 
 }

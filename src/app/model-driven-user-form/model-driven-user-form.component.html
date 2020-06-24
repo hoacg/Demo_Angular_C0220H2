@@ -1,42 +1,32 @@
-<form [formGroup]="userForm" (ngSubmit)="showInfo()">
+<form [formGroup]="articleForm" (ngSubmit)="saveArticle()">
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email"
+    <label for="exampleFormControlInput1">Tiêu đề bài viết</label>
+    <input type="text"
            class="form-control"
            id="exampleFormControlInput1"
-           placeholder="name@example.com"
-           formControlName="email"
+           formControlName="title"
     >
-    <div class="invalid-value" *ngIf="userForm.controls.email.invalid && userForm.controls.email.dirty">
-      Email phải nhập vào ít nhất 5 kí tự, tối đa 50 kí tự.
+    <div class="invalid-value" *ngIf="articleForm.controls.email.invalid && articleForm.controls.email.dirty">
+      Tiêu đề phải nhập vào ít nhất 5 kí tự, tối đa 50 kí tự.
     </div>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1" formControlName="mySelect">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+    <label for="exampleFormControlInput1">Hình ảnh</label>
+    <input type="url"
+           class="form-control"
+           id="exampleFormControlInput1"
+           formControlName="image"
+    >
+    <div class="invalid-value" *ngIf="articleForm.controls.image.invalid && articleForm.controls.image.dirty">
+      Tiêu đề phải nhập vào ít nhất 5 kí tự, tối đa 50 kí tự.
+    </div>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2" formControlName="myMultiSelect">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea formControlName="myText" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1">Nội dung</label>
+    <textarea formControlName="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
-  <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+  <button class="btn btn-primary" [disabled]="articleForm.invalid">Lưu</button>
   <button class="btn btn-secondary">Reset</button>
 
 </form>
