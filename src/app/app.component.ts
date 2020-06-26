@@ -1,31 +1,25 @@
-import {Component, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ArticleService} from './article.service';
+import {Article} from './article';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnChanges{
-  title = 'angular-c0220h2-demo';
-  isShow = true;
+export class AppComponent implements OnInit {
 
-  countDownSecond = 5;
+  articleList: Article[];
 
-  showMessage() {
-    alert('Het gio');
+  constructor(private articleService: ArticleService) {
   }
 
-  toggle() {
-    this.isShow = !this.isShow;
+  ngOnInit() {
+    this.articleService.getAll().subscribe( articles => {
+      this.articleList = articles;
+    }, error => {
+      alert('Lỗi xử lý trên Backend!');
+    });
   }
-
-  changeCountdownSecond() {
-    this.countDownSecond = 20;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('AppComponent, ngOnChanges được gọi: ', changes);
-  }
-
 
 }

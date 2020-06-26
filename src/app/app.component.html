@@ -1,10 +1,9 @@
 <div class="container">
 
-  <button (click)="toggle()">Show / Hide</button>
-  <button (click)="changeCountdownSecond()">Change countDownSecond</button>
-
-  <app-countdown-timer *ngIf="isShow" [seconds]="countDownSecond"></app-countdown-timer>
-  <app-countdown-timer *ngIf="isShow" [seconds]="3"></app-countdown-timer>
-  <app-countdown-timer *ngIf="isShow" [seconds]="5"></app-countdown-timer>
+  <div *ngFor="let article of articleList">
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.body }}</p>
+    <a href="/detail/{{article.id}}">Read More</a>
+  </div>
 
 </div>
