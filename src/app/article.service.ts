@@ -14,4 +14,12 @@ export class ArticleService {
   getAll() {
     return this.httpClient.get<Article[]>(this.apiUrl);
   }
+
+  createArticle(article: Article) {
+    return this.httpClient.post(this.apiUrl, article);
+  }
+
+  updateArticle(articeId: number, article: Article) {
+    return this.httpClient.put(`${this.apiUrl}/${articeId}`, article);
+  }
 }

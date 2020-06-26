@@ -1,5 +1,11 @@
 <div class="container">
 
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="title" />
+    <input type="text" formControlName="body"/>
+    <button>Save</button>
+  </form>
+
   <div *ngFor="let article of articleList">
     <h1>{{ article.title }}</h1>
     <p>{{ article.body }}</p>
